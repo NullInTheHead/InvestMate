@@ -1,0 +1,41 @@
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .navbar-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links a,
+  .auth-buttons a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .active {
+    font-weight: bold;
+  }
+  
+  .desktop {
+    display: none;
+  }
+  
+  .mobile {
+    display: block;
+  }
+  
+  @media (min-width: 768px) {
+    .desktop {
+      display: flex;
+    }
+  
+    .mobile {
+      display: none;
+    }
+  }
+  
