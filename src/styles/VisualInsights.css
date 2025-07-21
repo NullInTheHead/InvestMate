@@ -13,5 +13,18 @@
   .chart-wrapper {
     max-width: 600px;
     margin: 0 auto;
+    width: 100%;
+    overflow-x: auto; 
   }
+  
+  @media (max-width: 480px) {
+    .visual-insights h2 {
+      font-size: 1.5rem;
+    }
+  
+    .chart-wrapper {
+      padding: 0 10px;
+    }
+  }
+  
   

@@ -1,38 +1,65 @@
-.market-page {
+.market-data {
     padding: 2rem;
     text-align: center;
   }
   
-  .filter-buttons {
-    margin-bottom: 1rem;
+  .crypto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
   
-  .filter-buttons button {
-    margin: 0 0.5rem;
-    padding: 0.5rem 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border: 1px solid #aaa;
-    background-color: white;
-    border-radius: 6px
-  }
-  
-  .filter-buttons .active {
-    background-color: #00ffcc;
-    color: black;
-  }
-  
-  .market-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  
-  .market-item {
-    border: 1px solid #ccc;
-    border-radius: 8px;
+  .crypto-card {
+    background-color: #f9f9f9;
     padding: 1rem;
-    width: 120px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
   }
+  
+  .crypto-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .crypto-card img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .end-message {
+    margin-top: 2rem;
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .market-data {
+      padding: 1.5rem;
+    }
+  
+    .crypto-grid {
+      gap: 1rem;
+    }
+  
+    .crypto-card {
+      padding: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .market-data {
+      padding: 1rem;
+    }
+  
+    .crypto-card img {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .end-message {
+      font-size: 0.9rem;
+    }
+  }
+  
+  
   

@@ -1,67 +1,84 @@
-.auth-container {
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .auth-container h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #222;
-  }
-  
-  .auth-toggle {
+.auth-wrapper {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background: #f9fafb;
+    padding: 1rem;
+    box-sizing: border-box;
   }
   
-  .auth-toggle button {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    background-color: #f0f0f0;
-    color: #333;
-    border-radius: 6px;
-    cursor: pointer;
-    margin: 0 4px;
-    transition: 0.3s ease;
+  .auth-box {
+    width: 100%;
+    max-width: 420px;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
   }
   
-  .auth-toggle button.active {
-    background-color: #0077cc;
-    color: #fff;
+  .auth-box h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #111827;
+    margin-bottom: 1.5rem;
   }
   
   .auth-form {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
   }
   
   .auth-form input {
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .auth-form button {
-    padding: 12px;
-    background-color: #0077cc;
-    color: #fff;
+    padding: 0.75rem;
+    background-color: #00ffcc;
+    color: black;
+    font-weight: 600;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s;
+    font-size: 1rem;
   }
   
   .auth-form button:hover {
-    background-color: #005fa3;
+    background-color: #04bb96;
   }
+  
+  .auth-toggle-text {
+    text-align: center;
+    margin-top: 1rem;
+    color: #000302;
+    cursor: pointer;
+    font-size: 0.95rem;
+  }
+  
+  @media (max-width: 480px) {
+    .auth-box {
+      padding: 1.5rem;
+    }
+  
+    .auth-box h2 {
+      font-size: 1.5rem;
+    }
+  
+    .auth-form input,
+    .auth-form button {
+      font-size: 0.95rem;
+      padding: 0.65rem;
+    }
+  }
+  
+  
   

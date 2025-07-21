@@ -6,7 +6,7 @@ function HeroSection() {
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    navigate('/auth'); // This route will show your login/signup page
+    navigate('/auth'); 
   };
 
   return (

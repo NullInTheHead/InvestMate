@@ -1,55 +1,73 @@
-import React, { useEffect, useState } from "react";
-import "./../styles/Market.css"; // create this next
+import React, { useEffect, useState, useRef, useCallback } from 'react';
+import '../styles/Market.css';
 
 function Market() {
-  const [data, setData] = useState([]);
-  const [filter, setFilter] = useState("stocks");
+  const [coins, setCoins] = useState([]);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+  const observer = useRef();
+
+  const fetchCoins = async (pageNumber) => {
+    try {
+      const res = await fetch(
+        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=${pageNumber}&sparkline=false`
+      );
+      const data = await res.json();
+      if (data.length === 0) {
+        setHasMore(false);
+      } else {
+        setCoins((prev) => [...prev, ...data]);
+      }
+    } catch (err) {
+      console.error('Error fetching coins:', err);
+    }
+  };
 
   useEffect(() => {
-    const dummyStocks = [
-      { name: "AAPL", price: 196.23 },
-      { name: "GOOGL", price: 128.56 },
-      { name: "MSFT", price: 320.34 },
-    ];
+    fetchCoins(page);
+  }, [page]);
 
-    const dummyCrypto = [
-      { name: "BTC", price: 29753.45 },
-      { name: "ETH", price: 1875.22 },
-      { name: "SOL", price: 23.12 },
-    ];
+  const lastCoinRef = useCallback((node) => {
+    if (!hasMore) return;
+    if (observer.current) observer.current.disconnect();
 
-    setData(filter === "stocks" ? dummyStocks : dummyCrypto);
-  }, [filter]);
+    observer.current = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        setPage((prevPage) => prevPage + 1);
+      }
+    });
+
+    if (node) observer.current.observe(node);
+  }, [hasMore]);
 
   return (
-    <div className="market-page">
-      <h2>Market Data</h2>
-      <div className="filter-buttons">
-        <button
-          className={filter === "stocks" ? "active" : ""}
-          onClick={() => setFilter("stocks")}
-        >
-          Stocks
-        </button>
-        <button
-          className={filter === "crypto" ? "active" : ""}
-          onClick={() => setFilter("crypto")}
-        >
-          Crypto
-        </button>
+    <section className="market-data">
+      <h2>Live Crypto Prices</h2>
+      <div className="crypto-grid">
+        {coins.map((coin, index) => {
+          if (index === coins.length - 1) {
+            return (
+              <div className="crypto-card" key={coin.id} ref={lastCoinRef}>
+                <img src={coin.image} alt={coin.name} />
+                <h3>{coin.name}</h3>
+                <p>${coin.current_price.toLocaleString()}</p>
+              </div>
+            );
+          }
+          return (
+            <div className="crypto-card" key={coin.id}>
+              <img src={coin.image} alt={coin.name} />
+              <h3>{coin.name}</h3>
+              <p>${coin.current_price.toLocaleString()}</p>
+            </div>
+          );
+        })}
       </div>
-
-      <div className="market-list">
-        {data.map((item, idx) => (
-          <div key={idx} className="market-item">
-            <h4>{item.name}</h4>
-            <p>${item.price}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+      {!hasMore && <p className="end-message">You’ve reached the end.</p>}
+    </section>
   );
 }
 
 export default Market;
+
 

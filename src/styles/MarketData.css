@@ -1,43 +1,70 @@
 .market-data {
-    padding: 40px 20px;
+    padding: 2rem;
     text-align: center;
-    background-color: #f4f4f4;
-  }
-  
-  .market-data h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
   }
   
   .crypto-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
   
   .crypto-card {
-    background: white;
+    background-color: #f9f9f9;
+    padding: 1rem;
     border-radius: 12px;
-    padding: 20px 30px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-    width: 180px;
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
   }
   
   .crypto-card:hover {
     transform: translateY(-5px);
   }
   
-  .crypto-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #333;
+  .crypto-card img {
+    width: 40px;
+    height: 40px;
   }
   
-  .crypto-card p {
-    font-size: 1.4rem;
-    color: #00c896;
-    font-weight: bold;
+  .end-message {
+    margin-top: 2rem;
+    color: #666;
   }
+  
+  /* Responsive Enhancements */
+  @media (max-width: 768px) {
+    .market-data {
+      padding: 1.5rem;
+    }
+  
+    .crypto-grid {
+      gap: 1rem;
+    }
+  
+    .crypto-card {
+      padding: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .market-data {
+      padding: 1rem;
+    }
+  
+    .crypto-card {
+      padding: 0.75rem;
+    }
+  
+    .crypto-card img {
+      width: 32px;
+      height: 32px;
+    }
+  
+    .end-message {
+      font-size: 0.9rem;
+    }
+  }
+  
+
   

@@ -10,7 +10,7 @@ import MarketData from "./components/MarketData";
 import Transactions from "./pages/Transactions";
 import Account from "./pages/Account";
 import AuthPage from "./pages/AuthPage";
-
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -24,6 +24,8 @@ function App() {
         <Route path="/transactions" element={<Transactions />} />
         <Route path="/account" element={<Account />} />
         <Route path="/auth" element={<AuthPage />} />
+        <Route path="/account" element={<PrivateRoute><Account /></PrivateRoute>} />
+<Route path="/portfolio" element={<PrivateRoute><PortfolioPage /></PrivateRoute>} />
 
       </Route>
     </Routes>

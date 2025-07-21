@@ -11,7 +11,9 @@
     margin-bottom: 1.5rem;
   }
   
-  .txn-form input, .txn-form select, .txn-form button {
+  .txn-form input,
+  .txn-form select,
+  .txn-form button {
     padding: 0.5rem;
     font-size: 1rem;
   }
@@ -30,4 +32,18 @@
   .txn-item.sell {
     background-color: #ffe6e6;
   }
+  
+  @media (max-width: 480px) {
+    .txn-form input,
+    .txn-form select,
+    .txn-form button {
+      font-size: 0.95rem;
+      padding: 0.6rem;
+    }
+  
+    .txn-item {
+      font-size: 0.95rem;
+    }
+  }
+  
   
