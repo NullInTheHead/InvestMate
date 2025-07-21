@@ -9,6 +9,8 @@ import Market from "./pages/Market";
 import MarketData from "./components/MarketData";
 import Transactions from "./pages/Transactions";
 import Account from "./pages/Account";
+import AuthPage from "./pages/AuthPage";
+
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/crypto-prices" element={<MarketData />} />
         <Route path="/transactions" element={<Transactions />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/auth" element={<AuthPage />} />
+
       </Route>
     </Routes>
   );

@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/Account.css";
-import { useAuth } from "../context/AuthContext"; // Assuming you have AuthContext
+import { useAuth } from "../context/AuthContext";
 
 function Account() {
-  const { currentUser, logout } = useAuth(); // Firebase Auth
+  const { currentUser, logout } = useAuth();
 
   const handleLogout = async () => {
     try {
@@ -17,10 +17,18 @@ function Account() {
   return (
     <div className="account-page">
       <h2>Account</h2>
+
       {currentUser ? (
         <div className="account-details">
           <p><strong>Email:</strong> {currentUser.email}</p>
-          <button onClick={handleLogout}>Logout</button>
+
+          <div className="account-actions">
+            <button className="account-btn">Settings</button>
+            <button className="account-btn">Feedback</button>
+            <button className="account-btn logout" onClick={handleLogout}>
+              Logout
+            </button>
+          </div>
         </div>
       ) : (
         <p>You are not logged in.</p>
@@ -30,3 +38,4 @@ function Account() {
 }
 
 export default Account;
+
