@@ -1,0 +1,17 @@
+.visual-insights {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  .visual-insights h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .chart-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
