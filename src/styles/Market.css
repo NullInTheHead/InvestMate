@@ -1,0 +1,38 @@
+.market-page {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .filter-buttons {
+    margin-bottom: 1rem;
+  }
+  
+  .filter-buttons button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #aaa;
+    background-color: white;
+    border-radius: 6px
+  }
+  
+  .filter-buttons .active {
+    background-color: #00ffcc;
+    color: black;
+  }
+  
+  .market-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .market-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 120px;
+  }
+  
