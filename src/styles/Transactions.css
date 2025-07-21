@@ -1,0 +1,33 @@
+.transactions-page {
+    padding: 1rem;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .txn-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .txn-form input, .txn-form select, .txn-form button {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .txn-item {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+  }
+  
+  .txn-item.buy {
+    background-color: #e6ffed;
+  }
+  
+  .txn-item.sell {
+    background-color: #ffe6e6;
+  }
+  

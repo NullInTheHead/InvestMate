@@ -10,7 +10,10 @@ function Navbar() {
         <li><a href="/portfolio">Portfolio</a></li>
         <li><a href="/alerts">Alerts</a></li>
         <li><a href="/market">Market</a></li>
-        <li><a href="/settings">Account</a></li>
+        <li><a href="/transactions">Transactions</a></li>
+        <li><a href="/account">Account</a></li>
+        
+
       </ul>
     </nav>
   );

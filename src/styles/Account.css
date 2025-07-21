@@ -1,0 +1,28 @@
+.account-page {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .account-details {
+    margin-top: 1rem;
+    border: 1px solid #ddd;
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+  }
+  
+  button {
+    margin-top: 1rem;
+    padding: 0.5rem 1.2rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #c82333;
+  }
+  
