@@ -4,16 +4,16 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCjWYXUBFpj-fxq9RFMXFwTAarO-qXoQh4",
-  authDomain: "investmate-ef72a.firebaseapp.com",
-  projectId: "investmate-ef72a",
-  storageBucket: "investmate-ef72a.appspot.com", // fixed typo: was ".firebasestorage.app"
-  messagingSenderId: "987791605869",
-  appId: "1:987791605869:web:c9851800f69e611ef7bf64",
-  measurementId: "G-2BJM0PS0TT"
-};
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
+    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+  };
+  
 
-// ✅ Initialize app before using it
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
